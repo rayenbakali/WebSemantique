@@ -1,0 +1,862 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.owl-ontologies.com/sem.owl#"
+     xml:base="http://www.owl-ontologies.com/sem.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- #AFFECTER_DES -->
+
+    <owl:ObjectProperty rdf:about="#AFFECTER_DES">
+        <rdfs:domain rdf:resource="#ETUDIANT"/>
+        <rdfs:range rdf:resource="#RECLAMATION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- #ASSISTER_à -->
+
+    <owl:ObjectProperty rdf:about="#ASSISTER_à">
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="#FORMATION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- #CONTIENT_DES -->
+
+    <owl:ObjectProperty rdf:about="#CONTIENT_DES">
+        <rdfs:domain rdf:resource="#COURS"/>
+        <rdfs:range rdf:resource="#POSTS"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- #DIRIGER_PAR -->
+
+    <owl:ObjectProperty rdf:about="#DIRIGER_PAR">
+        <rdfs:domain rdf:resource="#CENTRE_DE_FORMATION"/>
+        <rdfs:range rdf:resource="#ADMIN"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- #ORGANISER_PAR -->
+
+    <owl:ObjectProperty rdf:about="#ORGANISER_PAR">
+        <rdfs:domain rdf:resource="#EVENT"/>
+        <rdfs:range rdf:resource="#CENTRE_DE_FORMATION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- #PARTICIPER_à -->
+
+    <owl:ObjectProperty rdf:about="#PARTICIPER_à">
+        <rdfs:domain rdf:resource="#ETUDIANT"/>
+        <rdfs:range rdf:resource="#EVENT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- #ADRESS -->
+
+    <owl:DatatypeProperty rdf:about="#ADRESS">
+        <rdfs:domain rdf:resource="#CENTRE_DE_FORMATION"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #AGE -->
+
+    <owl:DatatypeProperty rdf:about="#AGE">
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #CIN -->
+
+    <owl:DatatypeProperty rdf:about="#CIN">
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #CONTENU -->
+
+    <owl:DatatypeProperty rdf:about="#CONTENU">
+        <rdfs:domain rdf:resource="#POSTS"/>
+        <rdfs:domain rdf:resource="#RECLAMATION"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #DATE -->
+
+    <owl:DatatypeProperty rdf:about="#DATE">
+        <rdfs:domain rdf:resource="#EVENT"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #DATEDEBUT -->
+
+    <owl:DatatypeProperty rdf:about="#DATEDEBUT">
+        <rdfs:domain rdf:resource="#FORMATION"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #DATEFIN -->
+
+    <owl:DatatypeProperty rdf:about="#DATEFIN">
+        <rdfs:domain rdf:resource="#FORMATION"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #EMAIL -->
+
+    <owl:DatatypeProperty rdf:about="#EMAIL">
+        <rdfs:domain rdf:resource="#CENTRE_DE_FORMATION"/>
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #GENRE -->
+
+    <owl:DatatypeProperty rdf:about="#GENRE">
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #LOCATION -->
+
+    <owl:DatatypeProperty rdf:about="#LOCATION">
+        <rdfs:domain rdf:resource="#EVENT"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #NAME -->
+
+    <owl:DatatypeProperty rdf:about="#NAME">
+        <rdfs:domain rdf:resource="#CENTRE_DE_FORMATION"/>
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #NUMTEL -->
+
+    <owl:DatatypeProperty rdf:about="#NUMTEL">
+        <rdfs:domain rdf:resource="#CENTRE_DE_FORMATION"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #PDF -->
+
+    <owl:DatatypeProperty rdf:about="#PDF">
+        <rdfs:domain rdf:resource="#COURS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #POST_ID -->
+
+    <owl:DatatypeProperty rdf:about="#POST_ID">
+        <rdfs:domain rdf:resource="#POSTS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #PRENOM -->
+
+    <owl:DatatypeProperty rdf:about="#PRENOM">
+        <rdfs:domain rdf:resource="#USER"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #RECLAMATION_ID -->
+
+    <owl:DatatypeProperty rdf:about="#RECLAMATION_ID">
+        <rdfs:domain rdf:resource="#RECLAMATION"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #TIME -->
+
+    <owl:DatatypeProperty rdf:about="#TIME"/>
+    
+
+
+    <!-- #TITLE -->
+
+    <owl:DatatypeProperty rdf:about="#TITLE">
+        <rdfs:domain rdf:resource="#COURS"/>
+        <rdfs:domain rdf:resource="#EVENT"/>
+        <rdfs:domain rdf:resource="#POSTS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- #VIDEO -->
+
+    <owl:DatatypeProperty rdf:about="#VIDEO">
+        <rdfs:domain rdf:resource="#COURS"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- #ADMIN -->
+
+    <owl:Class rdf:about="#ADMIN">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#USER"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#CIN"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:length rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</xsd:length>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:intersectionOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#USER"/>
+    </owl:Class>
+    
+
+
+    <!-- #CENTRE_DE_FORMATION -->
+
+    <owl:Class rdf:about="#CENTRE_DE_FORMATION">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#NAME"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A-Z</xsd:pattern>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- #CONFERENCE -->
+
+    <owl:Class rdf:about="#CONFERENCE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#EVENT"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#TITLE"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A-Z</xsd:pattern>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:intersectionOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#EVENT"/>
+    </owl:Class>
+    
+
+
+    <!-- #COURS -->
+
+    <owl:Class rdf:about="#COURS">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#TITLE"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A-Z</xsd:pattern>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- #ETUDIANT -->
+
+    <owl:Class rdf:about="#ETUDIANT">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#USER"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#CIN"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:length rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</xsd:length>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:intersectionOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#USER"/>
+    </owl:Class>
+    
+
+
+    <!-- #EVENT -->
+
+    <owl:Class rdf:about="#EVENT">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#TITLE"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A-Z</xsd:pattern>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- #FORMATION -->
+
+    <owl:Class rdf:about="#FORMATION">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#DATEDEBUT"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- #POSTS -->
+
+    <owl:Class rdf:about="#POSTS">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#POST_ID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- #RECLAMATION -->
+
+    <owl:Class rdf:about="#RECLAMATION">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#RECLAMATION_ID"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxLength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:maxLength>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- #SEMINAIRE -->
+
+    <owl:Class rdf:about="#SEMINAIRE">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#EVENT"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#TITLE"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A-Z</xsd:pattern>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:intersectionOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#EVENT"/>
+    </owl:Class>
+    
+
+
+    <!-- #USER -->
+
+    <owl:Class rdf:about="#USER">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#CIN"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:length rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</xsd:length>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- #Etudiant1 -->
+
+    <owl:NamedIndividual rdf:about="#Etudiant1">
+        <rdf:type rdf:resource="#ETUDIANT"/>
+        <AFFECTER_DES rdf:resource="#reclamation1"/>
+        <ASSISTER_à rdf:resource="#formation1"/>
+        <PARTICIPER_à rdf:resource="#event1"/>
+        <PARTICIPER_à rdf:resource="#seminaire1"/>
+        <AGE rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</AGE>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07542344</CIN>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hiba.mateur@esprit.tn</EMAIL>
+        <GENRE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Femme</GENRE>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hiba</NAME>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #Etudiant2 -->
+
+    <owl:NamedIndividual rdf:about="#Etudiant2">
+        <rdf:type rdf:resource="#ETUDIANT"/>
+        <AFFECTER_DES rdf:resource="#reclamation2"/>
+        <ASSISTER_à rdf:resource="#formation2"/>
+        <PARTICIPER_à rdf:resource="#event2"/>
+        <PARTICIPER_à rdf:resource="#seminaire2"/>
+        <AGE rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</AGE>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07542342</CIN>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yosri.bouzid@esprit.tn</EMAIL>
+        <GENRE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homme</GENRE>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yosri</NAME>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #Etudiant3 -->
+
+    <owl:NamedIndividual rdf:about="#Etudiant3">
+        <rdf:type rdf:resource="#ETUDIANT"/>
+        <AFFECTER_DES rdf:resource="#reclamation3"/>
+        <ASSISTER_à rdf:resource="#formation3"/>
+        <PARTICIPER_à rdf:resource="#event3"/>
+        <PARTICIPER_à rdf:resource="#seminaire3"/>
+        <AGE rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</AGE>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07542340</CIN>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wissem.benhadjkhelifa@esprit.tn</EMAIL>
+        <GENRE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homme</GENRE>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wissem</NAME>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #admin1 -->
+
+    <owl:NamedIndividual rdf:about="#admin1">
+        <rdf:type rdf:resource="#ADMIN"/>
+        <AGE rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</AGE>
+        <CIN rdf:datatype="http://www.w3.org/2001/XMLSchema#string">05896533</CIN>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mohamedkarim.oueslati@esprit.tn</EMAIL>
+        <GENRE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homme</GENRE>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Karim</NAME>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #centre1 -->
+
+    <owl:NamedIndividual rdf:about="#centre1">
+        <rdf:type rdf:resource="#CENTRE_DE_FORMATION"/>
+        <DIRIGER_PAR rdf:resource="#admin1"/>
+        <ADRESS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Area 51</ADRESS>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">centre1@gmail.com</EMAIL>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoMyCode(tunisie)</NAME>
+        <NUMTEL rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26523452</NUMTEL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #centre2 -->
+
+    <owl:NamedIndividual rdf:about="#centre2">
+        <rdf:type rdf:resource="#CENTRE_DE_FORMATION"/>
+        <DIRIGER_PAR rdf:resource="#admin1"/>
+        <ADRESS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Area 52</ADRESS>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">centre2@gmail.com</EMAIL>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoMyCode(sousse)</NAME>
+        <NUMTEL rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51625875</NUMTEL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #centre3 -->
+
+    <owl:NamedIndividual rdf:about="#centre3">
+        <rdf:type rdf:resource="#CENTRE_DE_FORMATION"/>
+        <DIRIGER_PAR rdf:resource="#admin1"/>
+        <ADRESS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Area53</ADRESS>
+        <EMAIL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">centre3@gmail.com</EMAIL>
+        <NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GoMyCode(sfax)</NAME>
+        <NUMTEL rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">93564879</NUMTEL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #cours1 -->
+
+    <owl:NamedIndividual rdf:about="#cours1">
+        <rdf:type rdf:resource="#COURS"/>
+        <CONTIENT_DES rdf:resource="#post1"/>
+        <PDF rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://catalog.uni.edu/courses/music/music.pdf</PDF>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JS</TITLE>
+        <VIDEO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=leDh77A2AkY</VIDEO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #cours2 -->
+
+    <owl:NamedIndividual rdf:about="#cours2">
+        <rdf:type rdf:resource="#COURS"/>
+        <CONTIENT_DES rdf:resource="#post2"/>
+        <PDF rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://catalog.uni.edu/courses/music/music.pdf</PDF>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JAVA</TITLE>
+        <VIDEO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=leDh77A2AkY</VIDEO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #cours3 -->
+
+    <owl:NamedIndividual rdf:about="#cours3">
+        <rdf:type rdf:resource="#COURS"/>
+        <CONTIENT_DES rdf:resource="#post3"/>
+        <PDF rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://catalog.uni.edu/courses/music/music.pdf</PDF>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C++</TITLE>
+        <VIDEO rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=leDh77A2AkY</VIDEO>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #event1 -->
+
+    <owl:NamedIndividual rdf:about="#event1">
+        <rdf:type rdf:resource="#CONFERENCE"/>
+        <ORGANISER_PAR rdf:resource="#centre1"/>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event_by_centre1</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #event2 -->
+
+    <owl:NamedIndividual rdf:about="#event2">
+        <rdf:type rdf:resource="#CONFERENCE"/>
+        <ORGANISER_PAR rdf:resource="#centre2"/>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event_by_centre2</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #event3 -->
+
+    <owl:NamedIndividual rdf:about="#event3">
+        <rdf:type rdf:resource="#CONFERENCE"/>
+        <ORGANISER_PAR rdf:resource="#centre3"/>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event_by_centre3</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #formation1 -->
+
+    <owl:NamedIndividual rdf:about="#formation1">
+        <rdf:type rdf:resource="#FORMATION"/>
+        <DATEDEBUT rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T10:00:00</DATEDEBUT>
+        <DATEFIN rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T13:00:00</DATEFIN>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #formation2 -->
+
+    <owl:NamedIndividual rdf:about="#formation2">
+        <rdf:type rdf:resource="#FORMATION"/>
+        <DATEDEBUT rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T10:00:00</DATEDEBUT>
+        <DATEFIN rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T13:00:00</DATEFIN>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #formation3 -->
+
+    <owl:NamedIndividual rdf:about="#formation3">
+        <rdf:type rdf:resource="#FORMATION"/>
+        <DATEDEBUT rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T10:00:00</DATEDEBUT>
+        <DATEFIN rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-01T13:00:00</DATEFIN>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #post1 -->
+
+    <owl:NamedIndividual rdf:about="#post1">
+        <rdf:type rdf:resource="#POSTS"/>
+        <POST_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</POST_ID>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FirstCourse</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #post2 -->
+
+    <owl:NamedIndividual rdf:about="#post2">
+        <rdf:type rdf:resource="#POSTS"/>
+        <POST_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</POST_ID>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SecondCourse</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #post3 -->
+
+    <owl:NamedIndividual rdf:about="#post3">
+        <rdf:type rdf:resource="#POSTS"/>
+        <POST_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</POST_ID>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ThirdCourse</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #reclamation1 -->
+
+    <owl:NamedIndividual rdf:about="#reclamation1">
+        <rdf:type rdf:resource="#RECLAMATION"/>
+        <RECLAMATION_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</RECLAMATION_ID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #reclamation2 -->
+
+    <owl:NamedIndividual rdf:about="#reclamation2">
+        <rdf:type rdf:resource="#RECLAMATION"/>
+        <RECLAMATION_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</RECLAMATION_ID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #reclamation3 -->
+
+    <owl:NamedIndividual rdf:about="#reclamation3">
+        <rdf:type rdf:resource="#RECLAMATION"/>
+        <RECLAMATION_ID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</RECLAMATION_ID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #seminaire1 -->
+
+    <owl:NamedIndividual rdf:about="#seminaire1">
+        <rdf:type rdf:resource="#SEMINAIRE"/>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seminaire_by_x</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #seminaire2 -->
+
+    <owl:NamedIndividual rdf:about="#seminaire2">
+        <rdf:type rdf:resource="#SEMINAIRE"/>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seminaire_by_y</TITLE>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- #seminaire3 -->
+
+    <owl:NamedIndividual rdf:about="#seminaire3">
+        <rdf:type rdf:resource="#SEMINAIRE"/>
+        <TITLE rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seminaire_by_z</TITLE>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
