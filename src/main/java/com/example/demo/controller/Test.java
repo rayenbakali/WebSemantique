@@ -30,14 +30,14 @@ import com.example.demo.tools.JenaEngine;
 @RequestMapping("/test")
 
 
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class Test {
 	@GetMapping("/hello")
     public String getAllToursByTitler() {
 
        return "hello";
     }
-	
+
 	
 	@GetMapping("/etudiant/{name}")
     public String getEtudiantByName(@PathVariable(value = "name") String name) {
@@ -131,9 +131,6 @@ public class Test {
                 "?COURS ns:TITLE ?TITLE ;\n" +
                 "             ns:VIDEO ?VIDEO ;\n" +
                 "             ns:PDF ?PDF ;\n" +
-             
-               
-                
                 "}";
 
         Model model = JenaEngine.readModel("data/sem.owl");
@@ -158,10 +155,8 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
- 
 	@GetMapping("/centreformations")
     public String getCF() {
-
         String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
