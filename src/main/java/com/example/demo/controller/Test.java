@@ -27,10 +27,10 @@ import com.example.demo.tools.JenaEngine;
 
 @RestController
 
-@RequestMapping("/test")
+@RequestMapping("/Education")
 
 
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "http://localhost:5173")
 public class Test {
 	@GetMapping("/hello")
     public String getAllToursByTitler() {
@@ -205,7 +205,7 @@ public class Test {
                 "\n" +
                 "SELECT *\n" +
                 "WHERE {\n" +
-                "?POSTS ns:POST_ID ?POST_ID ;\n" +
+                "? POSTS ns:POST_ID ?POST_ID ;\n" +
              
              
                
@@ -246,14 +246,26 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?ADMIN ?CENTRE_DE_FORMATION \n" +
+                "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "\n" +
+               "\n" +
+                "SELECT ?CENTRE_DE_FORMATION ?CENTRE_NAME ?ADMIN (STR(?NAME) AS ?NAME_STRING) (STR(?EMAIL) AS ?EMAIL_STRING) (STR(?NUMTEL) AS ?NUMTEL_STRING)\n" +
                 "WHERE {\n" +
-                "?CENTRE_DE_FORMATION ns:DIRIGER_PAR ?ADMIN ;\n" +
-          
+                "  ?CENTRE_DE_FORMATION ns:DIRIGER_PAR ?ADMIN ;\n" +
+                "                     ns:NAME ?CENTRE_NAME .\n" +
+                "  OPTIONAL {\n" +
+                "    ?ADMIN ns:NAME ?NAME ;\n" +
+                "           ns:EMAIL ?EMAIL ;\n" +
+                "           ns:NUMTEL ?NUMTEL .\n" +
+                "  }\n" +
                 "}";
 
-        
-        Model model = JenaEngine.readModel("data/sem.owl");
+
+
+
+
+                Model model = JenaEngine.readModel("data/sem.owl");
 
         QueryExecution qe = QueryExecutionFactory.create(qexec, model);
         ResultSet results = qe.execSelect();
@@ -285,10 +297,15 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?EVENT ?ETUDIANT \n" +
+                "SELECT ?CENTRE_DE_FORMATION ?CENTRE_NAME ?ADMIN ?NAME ?EMAIL ?\n" +
                 "WHERE {\n" +
-                "?ETUDIANT ns:PARTICIPER_à ?EVENT ;\n" +
-          
+                "  ?CENTRE_DE_FORMATION ns:DIRIGER_PAR ?ADMIN ;\n" +
+                "                     ns:NAME ?CENTRE_NAME .\n" +
+                "  OPTIONAL {\n" +
+                "    ?ADMIN ns:NAME ?NAME ;\n" +
+                "           ns:EMAIL ?EMAIL ;\n" +
+                "           ns:NUMTEL ?NUMTEL .\n" +
+                "  }\n" +
                 "}";
 
         

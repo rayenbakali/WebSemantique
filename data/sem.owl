@@ -640,9 +640,9 @@
         <rdf:type rdf:resource="http://www.owl-ontologies.com/sem.owl#ADMIN"/>
         <AGE rdf:datatype="&xsd;integer">24</AGE>
         <CIN rdf:datatype="&xsd;string">69696969</CIN>
+        <NAME rdf:datatype="&xsd;string">Admin</NAME>
         <GENRE rdf:datatype="&xsd;string">Homme</GENRE>
-        <NAME rdf:datatype="&xsd;string">Rayen</NAME>
-        <EMAIL rdf:datatype="&xsd;string">rayen.bakali@esprit.tn</EMAIL>
+        <EMAIL rdf:datatype="&xsd;string">admin@esprit.tn</EMAIL>
     </owl:NamedIndividual>
     
 
