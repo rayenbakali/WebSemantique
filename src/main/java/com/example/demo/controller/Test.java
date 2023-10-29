@@ -19,17 +19,8 @@ import com.example.demo.tools.JenaEngine;
 
 //import com.example.demo.tools.JenaEngine;
 
-
- 
-
-
-
-
 @RestController
-
 @RequestMapping("/Education")
-
-
 @CrossOrigin(origins = "http://localhost:5173")
 public class Test {
 	@GetMapping("/hello")
@@ -250,15 +241,9 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                "\n" +
-                "SELECT ?CENTRE_DE_FORMATION ?CENTRE_NAME ?ADMIN (STR(?NAME) AS ?NAME_STRING) (STR(?EMAIL) AS ?EMAIL_STRING) (STR(?NUMTEL) AS ?NUMTEL_STRING)\n" +
+                "SELECT (strafter(str(?ADMIN), \"#\") as ?ADMIN_NAME) (strafter(str(?CENTRE_DE_FORMATION), \"#\") as ?CENTRE_DE_FORMATION_NAME)\n" +
                 "WHERE {\n" +
                 "  ?CENTRE_DE_FORMATION ns:DIRIGER_PAR ?ADMIN ;\n" +
-                "                     ns:NAME ?CENTRE_NAME .\n" +
-                "  OPTIONAL {\n" +
-                "    ?ADMIN ns:NAME ?NAME ;\n" +
-                "           ns:EMAIL ?EMAIL ;\n" +
-                "           ns:NUMTEL ?NUMTEL .\n" +
-                "  }\n" +
                 "}";
 
 
@@ -291,23 +276,15 @@ public class Test {
 	
 	@GetMapping("/etudiantevent")
     public String getaetudiantevent() {
-		
-		
-		String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
+
+        String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?CENTRE_DE_FORMATION ?CENTRE_NAME ?ADMIN ?NAME ?EMAIL ?\n" +
+             "SELECT (strafter(str(?ETUDIANT), \"#\") as ?ETUDIANT_NAME) (strafter(str(?EVENT), \"#\") as ?EVENT_NAME)\n" +
                 "WHERE {\n" +
-                "  ?CENTRE_DE_FORMATION ns:DIRIGER_PAR ?ADMIN ;\n" +
-                "                     ns:NAME ?CENTRE_NAME .\n" +
-                "  OPTIONAL {\n" +
-                "    ?ADMIN ns:NAME ?NAME ;\n" +
-                "           ns:EMAIL ?EMAIL ;\n" +
-                "           ns:NUMTEL ?NUMTEL .\n" +
-                "  }\n" +
+                "  ?ETUDIANT ns:PARTICIPER_à ?EVENT ;\n" +
                 "}";
-
         
         Model model = JenaEngine.readModel("data/sem.owl");
 
@@ -341,10 +318,9 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?RECLAMATION ?ETUDIANT \n" +
+              "SELECT (strafter(str(?RECLAMATION), \"#\") as ?RECLAMATION_NAME) (strafter(str(?ETUDIANT), \"#\") as ?ETUDIANT_NAME)\n" +
                 "WHERE {\n" +
-                "?ETUDIANT ns:AFFECTER_DES ?RECLAMATION ;\n" +
-          
+                "  ?ETUDIANT ns:AFFECTER_DES ?RECLAMATION ;\n" +
                 "}";
 
         
@@ -381,12 +357,10 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?FORMATION ?ETUDIANT \n" +
+               "SELECT (strafter(str(?FORMATION), \"#\") as ?FORMATION_NAME) (strafter(str(?ETUDIANT), \"#\") as ?ETUDIANT_NAME)\n" +
                 "WHERE {\n" +
-                "?ETUDIANT ns:ASSISTER_à ?FORMATION ;\n" +
-          
+                "  ?ETUDIANT ns:ASSISTER_à ?FORMATION ;\n" +
                 "}";
-
         
         Model model = JenaEngine.readModel("data/sem.owl");
 
@@ -414,13 +388,12 @@ public class Test {
 	
 	@GetMapping("/coursposts")
     public String getcoursposts() {
-		
-		
+
 		String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?COURS ?POSTS \n" +
+                "SELECT (strafter(str(?COURS),\"#\")as ?COURS_NAME) (strafter(str(?POSTS),\"#\") as ?POST_NAME) \n" +
                 "WHERE {\n" +
                 "?COURS ns:CONTIENT_DES ?POSTS ;\n" +
           
@@ -459,7 +432,7 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?CONFERENCE ?CENTRE_DE_FORMATION \n" +
+                "SELECT (strafter(str(?CONFERENCE),\"#\") as ?CONFERENCE_NAME)  (strafter(str(?CENTRE_DE_FORMATION),\"#\") as ?CENTRE_DE_FORMATION_NAME) \n" +
                 "WHERE {\n" +
                 "?CONFERENCE ns:ORGANISER_PAR ?CENTRE_DE_FORMATION ;\n" +
           
@@ -497,7 +470,7 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT ?SEMINAIRE ?ETUDIANT \n" +
+                "SELECT (strafter(str(?SEMINAIRE),\"#\")as ?SEMINAIRE_NAME) (strafter(str(?ETUDIANT),\"#\")as ?ETUDIANT_NAME) \n" +
                 "WHERE {\n" +
                 "?ETUDIANT ns:PARTICIPER_à ?SEMINAIRE ;\n" +
           

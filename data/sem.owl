@@ -753,6 +753,16 @@
     
 
 
+    <!-- http://www.owl-ontologies.com/sem.owl#event4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/sem.owl#event4">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/sem.owl#CONFERENCE"/>
+        <TITLE>event_by_centre3</TITLE>
+        <ORGANISER_PAR rdf:resource="http://www.owl-ontologies.com/sem.owl#centre3"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.owl-ontologies.com/sem.owl#formation1 -->
 
     <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/sem.owl#formation1">
