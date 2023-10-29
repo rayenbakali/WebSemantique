@@ -30,7 +30,7 @@ import com.example.demo.tools.JenaEngine;
 @RequestMapping("/test")
 
 
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "http://localhost:5173")
 public class Test {
 	@GetMapping("/hello")
     public String getAllToursByTitler() {
@@ -38,7 +38,7 @@ public class Test {
        return "salem";
     }
 
-	
+	//Get etudiant by name
 	@GetMapping("/etudiant/{name}")
     public String getEtudiantByName(@PathVariable(value = "name") String name) {
 
@@ -78,7 +78,7 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
-
+    //Get all etudiants
 	@GetMapping("/etudiants")
     public String getEtudiant() {
 
@@ -118,7 +118,8 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
-	
+
+    //Get All courses
 	@GetMapping("/Cours")
     public String getCours() {
 
@@ -155,6 +156,8 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
+
+    //Get all formation centers
 	@GetMapping("/centreformations")
     public String getCF() {
         String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
@@ -195,7 +198,7 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
-	
+	//get all posts
 	@GetMapping("/posts")
     public String getPOST() {
 
@@ -236,7 +239,7 @@ public class Test {
     }
 	
 	
-	
+	//center admins
 	
 	@GetMapping("/admincentre")
     public String getadmincentre() {
@@ -276,7 +279,7 @@ public class Test {
 
     }
 	
-	
+	//Student event
 	@GetMapping("/etudiantevent")
     public String getaetudiantevent() {
 		
@@ -474,7 +477,7 @@ public class Test {
 	
 	@GetMapping("/etudiantseminaire")
     public String getetudiantseminaire() {
-		
+
 		
 		String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
