@@ -158,10 +158,6 @@ public class Test {
                 "             ns:ADRESS ?ADRESS ;\n" +
                 "             ns:EMAIL ?EMAIL ;\n" +
                 "             ns:NUMTEL ?NUMTEL ;\n" +
-                
-             
-               
-                
                 "}";
 
         Model model = JenaEngine.readModel("data/sem.owl");
@@ -194,13 +190,10 @@ public class Test {
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "\n" +
                 "\n" +
-                "SELECT *\n" +
+                "SELECT ?POST_ID ?TITLE\n" +
                 "WHERE {\n" +
-                "? POSTS ns:POST_ID ?POST_ID ;\n" +
-             
-             
-               
-                
+                "?POSTS ns:POST_ID ?POST_ID .\n" +
+                "?POSTS ns:TITLE ?TITLE .\n" +
                 "}";
 
         Model model = JenaEngine.readModel("data/sem.owl");
@@ -231,7 +224,6 @@ public class Test {
 	
 	@GetMapping("/admincentre")
     public String getadmincentre() {
-		
 		
 		String qexec = "PREFIX ns: <http://www.owl-ontologies.com/sem.owl#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -499,12 +491,4 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
- 
- 
- 
-	
-	
- 
-
-
 }
