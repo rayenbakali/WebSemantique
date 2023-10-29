@@ -35,7 +35,7 @@ public class Test {
 	@GetMapping("/hello")
     public String getAllToursByTitler() {
 
-       return "hello";
+       return "salem";
     }
 
 	
